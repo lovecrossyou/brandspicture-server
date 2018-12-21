@@ -23,5 +23,10 @@ module.exports = appInfo => {
       '.tpl': 'nunjucks',
     },
   };
+
+  config.multipart = {
+    mode: 'file',
+  };
+
   return config;
 };
