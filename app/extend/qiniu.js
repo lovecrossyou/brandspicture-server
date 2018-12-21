@@ -26,8 +26,6 @@ const getUploadToken = async () => {
 
 const upload = async (file, prefix = '') => {
   const uploadToken = await getUploadToken();
-
-  console.log('upload file ', file);
   const localFile = file.filepath;
   const formUploader = new qiniu.form_up.FormUploader(config);
   const putExtra = new qiniu.form_up.PutExtra();
