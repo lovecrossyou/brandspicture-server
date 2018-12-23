@@ -4,8 +4,8 @@
  */
 const { JPushAsync: JPushAsync } = require('jpush-async');
 
-const Appkey = '0f4f36e4d5c7a6d4a0e871ab';
-const MasterSecret = 'f9ab173a4b4f6b9dad290b9e';
+const Appkey = '70023135ee111faf1b9f90d3';
+const MasterSecret = '7aecf337630bb083a4492813';
 
 const client = JPushAsync.buildClient(Appkey, MasterSecret);
 
@@ -22,12 +22,12 @@ const pushAll = content => {
     });
 };
 
-const push = content => {
+const push = (content, alias) => {
   client.push().setPlatform('ios', 'android')
-    .setAudience(JPushAsync.tag('555', '666'), JPushAsync.alias('666,777'))
-    .setNotification('Hi, JPush', JPushAsync.ios('ios alert'), JPushAsync.android('android alert', null, 1))
+    .setAudience(JPushAsync.alias(alias))
+    .setNotification('Hi, 翼优生活', JPushAsync.ios(content,'myVoice.caf',1,false,null), JPushAsync.android(content, null, 1))
     .setMessage(content)
-    .setOptions(null, 60)
+    .setOptions(null, 86400, null, false, null)
     .send()
     .then(function(result) {
       console.log(result);
@@ -37,7 +37,10 @@ const push = content => {
     });
 };
 
-module.exports = {
-  pushAll,
-  push,
-};
+// pushAll('哈哈哈哈')
+push('哈哈哈哈', 'lovecross')
+
+// module.exports = {
+//   pushAll,
+//   push,
+// };
