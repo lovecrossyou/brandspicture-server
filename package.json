@@ -5,9 +5,12 @@
   "private": true,
   "dependencies": {
     "egg": "^2.14.2",
+    "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^4.2.0",
     "egg-view-nunjucks": "^2.2.0",
     "jpush-async": "^4.0.0-rc.1",
+    "mysql2": "^1.6.4",
     "qiniu": "^7.2.1"
   },
   "devDependencies": {
