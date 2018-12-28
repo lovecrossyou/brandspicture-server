@@ -25,7 +25,7 @@ const pushAll = content => {
 const push = (content, alias) => {
   client.push().setPlatform('ios', 'android')
     .setAudience(JPushAsync.alias(alias))
-    .setNotification('Hi, 翼优生活', JPushAsync.ios(content,'myVoice.m4a',1,false,null), JPushAsync.android(content, null, 1))
+    .setNotification('Hi, 翼优生活', JPushAsync.ios(content, 'myVoice.m4a', 1, false, null), JPushAsync.android(content, null, 1))
     .setMessage(content)
     .setOptions(null, 86400, null, false, null)
     .send()
@@ -38,9 +38,9 @@ const push = (content, alias) => {
 };
 
 // pushAll('哈哈哈哈')
-// push('新订单提醒', 'lovecross')
+push('新订单提醒', 'lovecross')
 
-module.exports = {
-  pushAll,
-  push,
-};
+// module.exports = {
+//   pushAll,
+//   push,
+// };
